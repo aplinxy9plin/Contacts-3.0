@@ -13,7 +13,7 @@ class ViewController: UIViewController {
     @IBOutlet weak var webView: UIWebView!
     override func viewDidLoad() {
         super.viewDidLoad()
-        webView.loadRequest(URLRequest(url: URL(string: "http://192.168.0.101:3000/build/")!))
+        webView.loadRequest(URLRequest(url: URL(string: "http://127.0.0.1:3000/build/")!))
         webView.scrollView.isScrollEnabled = false;
         webView.scrollView.bounces = false;
         // Do any additional setup after loading the view, typically from a nib.
@@ -26,4 +26,3 @@ class ViewController: UIViewController {
 
 
 }
-

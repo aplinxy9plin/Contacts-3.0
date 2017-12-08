@@ -1,0 +1,198 @@
+<html class="pixel-ratio-2 retina watch-active-state"><head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no, minimal-ui">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <title>My App</title>
+    <!-- Path to Framework7 Library CSS-->
+    <link rel="stylesheet" href="css/framework7.ios.css">
+    <link rel="stylesheet" href="css/framework7.ios.colors.css">
+    <!-- Path to your custom app styles-->
+    <link rel="stylesheet" href="css/my-app.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  </head>
+  <body class="framework7-root">
+    <!-- Status bar overlay for fullscreen mode-->
+    <div class="statusbar-overlay"></div>
+    <!-- Panels overlay-->
+    <div class="panel-overlay"></div>
+    <!-- Left panel with reveal effect-->
+    <div class="panel panel-left panel-reveal">
+      <div class="content-block">
+        <p>Left panel content goes here</p>
+      </div>
+    </div>
+    <!-- Right panel with cover effect-->
+    <div class="panel panel-right panel-cover">
+      <div class="content-block">
+        <p>Right panel content goes here</p>
+      </div>
+    </div>
+    <!-- Views-->
+    <div class="views">
+      <!-- Your main view, should have "view-main" class-->
+      <div class="view view-main" data-page="index">
+        <!-- Top Navbar-->
+        <div class="navbar">
+          <div class="navbar-inner">
+            <!-- We have home navbar without left link-->
+            <div class="center sliding" style="left: 48px;">Камень ножницы бумага</div>
+          </div>
+        </div>
+        <!-- Pages, because we need fixed-through navbar and toolbar, it has additional appropriate classes-->
+        <div class="pages navbar-through toolbar-through">
+          <!-- Page, data-page contains page name-->
+          <div data-page="index" class="page page-on-center">
+            <!-- Scrollable page content-->
+            <div class="page-content">
+              <div class="content-block-title">Приветствую, смертный</div>
+              <div class="content-block">
+                <div class="content-block-inner">
+                  <h3>Правила</h3>
+                  <ul>
+                    <li class="">Камень побеждает ножницы («камень слишком крепок для ножниц»)</li>
+                    <li>Бумага побеждает камень («бумага накрывает камень»)</li>
+                    <li class="">Ножницы побеждают бумагу («ножницы разрезают бумагу»)</li>
+                  </ul>
+                </div>
+              </div>
+              <div class="content-block">
+                <center><div class=".col-100.tablet-50">
+                   <p><a href="play.html" class="button button-big button-fill color-green item-inner">Играть</a></p>          
+                </div></center>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- Path to Framework7 Library JS-->
+    <script type="text/javascript" src="js/framework7.js"></script>
+    <!-- Path to your app js-->
+    <script type="text/javascript" src="js/my-app.js"></script>
+  <script src="//localhost:35729/livereload.js?snipver=1" async="" defer=""></script>
+<script type="text/javascript">
+
+
+  // затестить на андроид и добавить кнопку на весь экран
+
+
+var myApp = new Framework7();
+var $$ = Dom7;
+var mainView = myApp.addView('.view-main');
+var user_score = 0;
+var enemy_score = 0;
+function loadScore(user_score, enemy_score){
+  document.getElementById('user_score').innerHTML = 'Ваш счет: ' + user_score;
+  document.getElementById('enemy_score').innerHTML = 'Счет компьютера: ' + enemy_score;
+}
+function myMove(user_answer) {
+  if(user_answer == 1){
+    $("#main #div2").append('<div><img style="position: relative; margin-left: 10px" id="fight" src="img/stone.png" width="100px"></div>');    
+  }
+  if(user_answer == 2){
+    $("#main #div2").append('<div><img style="position: relative; margin-left: 10px" id="fight" src="img/paper.png" width="100px"></div>');    
+  }
+  if(user_answer == 3){
+    $("#main #div2").append('<div><img style="position: relative; margin-left: 10px" id="fight" src="img/scissors.png" width="100px"></div>');    
+  }
+  var elem = document.getElementById("fight");   
+  elem.style.position = 'absolute';
+  document.getElementById("stone").setAttribute("disabled", "disabled");
+  document.getElementById("paper").setAttribute("disabled", "disabled");
+  document.getElementById("scissors").setAttribute("disabled", "disabled");
+  var pos = 0;
+  var id = setInterval(frame, 5);
+  function frame() {
+        if (pos == 70) {
+            clearInterval(id);
+            enemy(user_answer);
+        } else {
+            pos++; 
+            elem.style.paddingTop = pos + 'px'; 
+        }
+  }
+  function enemy(user_answer){
+    var enemyChoose = Math.floor(Math.random() * (3 - 1 + 1)) + 1;
+    if(enemyChoose == 1){
+      $("#main #div2").append('<div><img style="position: absolute; float: right; right: 15px; z-index: 1000000 " id="enemy" src="img/stone.png" width="100px"></div>');          
+    }
+    if(enemyChoose == 2){
+      $("#main #div2").append('<div><img style="position: absolute; float: right; right: 15px; z-index: 1000000 " id="enemy" src="img/paper.png" width="100px"></div>');          
+    }
+    if(enemyChoose == 3){
+      $("#main #div2").append('<div><img style="position: absolute; float: right; right: 15px; z-index: 1000000 " id="enemy" src="img/scissors.png" width="100px"></div>');          
+    }
+    var kek = document.getElementById("enemy");
+    var pos1 = 0;
+    var id1 = setInterval(frame1, 5);
+    function frame1() {
+          if (pos1 == 70) {
+              clearInterval(id1);      
+          } else {
+              pos1++; 
+              kek.style.marginTop = pos1 + 'px'; 
+          }
+    }
+    if(user_answer == enemyChoose){
+      alertF(3);
+    }
+    if(user_answer == 1 && enemyChoose == 2){
+      alertF(0);
+    }
+    if(user_answer == 1 && enemyChoose == 3){
+      alertF(1);
+    }
+    if(user_answer == 2 && enemyChoose == 1){
+      alertF(1);
+    }
+    if(user_answer == 2 && enemyChoose == 3){
+      alertF(0);
+    }
+    if(user_answer == 3 && enemyChoose == 1){
+      alertF(0);
+    }
+    if(user_answer == 3 && enemyChoose == 2){
+      alertF(1);
+    }
+  }
+  function alertF(what){
+    if(what == 1){
+      var xex = 'Вы выиграли :)';
+      user_score++;
+      document.getElementById('user_score').innerHTML = 'Ваш счет: ' + user_score;
+    }
+    if(what == 0){
+      var xex = 'Вы проиграли :(';
+      enemy_score++;
+      document.getElementById('enemy_score').innerHTML = 'Счет компьютера: ' + enemy_score;
+    }
+    if(what == 3){
+      var xex = 'Ничья :|';
+    }
+    myApp.modal({
+              title:'Игра окончена',
+              text: xex,
+              buttons: [
+                {
+                  text: 'Продолжить',
+                  onClick: function() {
+                    document.getElementById('fight').remove();
+                    document.getElementById('enemy').remove();
+                    document.getElementById("stone").removeAttribute("disabled");
+                    document.getElementById("paper").removeAttribute("disabled");
+                    document.getElementById("scissors").removeAttribute("disabled");
+                  }
+                },
+                {
+                  text: 'Выйти',
+                  onClick: function() {
+                    mainView.router.back();
+                  }
+                }
+              ]
+            }) 
+  }
+}
+</script>
+<div class="modal-overlay"></div></body></html>

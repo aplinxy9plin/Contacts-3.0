@@ -12,10 +12,6 @@ var mainView = myApp.addView('.view-main', {
     dynamicNavbar: true
 });
 
-myApp.onPageInit('index', function(page){
-
-});
-
 myApp.onPageInit('geo', function (page) {
     // Default
     var x = true;

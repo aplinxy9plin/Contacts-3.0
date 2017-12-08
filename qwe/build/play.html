@@ -1,0 +1,43 @@
+
+<!-- We don't need full layout here, because this page will be parsed with Ajax-->
+<!-- Top Navbar-->
+<div class="navbar">
+  <div class="navbar-inner">
+    <div class="left"><a href="#" class="back link"> <i class="icon icon-back"></i><span>Выйти</span></a></div>
+    <div class="center sliding">В БОЙ!!!!</div>
+  </div>
+</div>
+<div class="pages">
+  <!-- Page, data-page contains page name-->
+  <div data-page="about" class="page">
+    <!-- Scrollable page content-->
+    <div class="page-content">
+      <div class="content-block" id="main">
+        <div id="div1" class="content-block-title">Выбери свое оружие!</div>
+        <div class="list-block">
+        <ul>
+          <li class="item-content">
+            <div class="item-media"></div>
+            <div class="item-inner">
+              <div class="item-title" id="user_score">Ваш счет: 0</div>
+            </div>
+          </li>
+          <li class="item-content">
+            <div class="item-media"></div>
+            <div class="item-inner">
+              <div class="item-title" id="enemy_score">Счет компьютера: 0</div>
+            </div>
+          </li>
+        </ul>
+        </div>
+        <div id="div2">
+          <a id="stone" onclick="myMove(1)"><img style="margin-left: 20px" id="stone" src="img/stone.png" width="100px"></a>
+          <a id="paper" onclick="myMove(2)"><img style="position: relative; margin-left: 30px" src="img/paper.png" width="100px"></a>
+          <center><a id="scissors" onclick="myMove(3)"><img style="position: relative;" src="img/scissors.png" width="100px"></a></center>
+        </div>
+        <hr>
+        <div style="text-align: center; margin-left: 17px"><h3 style="display: inline; margin-right: 40px">Игрок</h3><h1 style="display: inline;color: black">VS</h1><h3 style="display: inline; margin-left: 40px">Противник</h3></div>
+      </div>
+    </div>
+  </div>
+</div>

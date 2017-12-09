@@ -14,336 +14,122 @@
     <link rel="stylesheet" href="css/my-app.css">
   </head>
   <body>
-    <!-- Status bar overlay for fullscreen mode-->
-    <div class="statusbar-overlay"></div>
-    <!-- Panels overlay-->
-    <div class="panel-overlay"></div>
-    <!-- Left panel with reveal effect-->
-    <div class="panel panel-left panel-reveal">
-      <div class="content-block">
-        <!-- Search Bar -->
-  <form data-search-list=".list-block" data-search-in=".item-title" class="searchbar searchbar-init" style="background-color: #111">
-    <div class="searchbar-input">
-      <input type="search" placeholder="Поиск по тэгам"><a href="#" class="searchbar-clear"></a>
-    </div><a href="geo.html" class="searchbar-cancel">GEO</a>
-  </form>
-
-  <!-- Search Bar overlay -->
-  <div class="searchbar-overlay"></div>
-        <div class="list-block" style="margin-top: 150px">
-          <center><h3 style="display: inline;">Тэги</h3></center>
-          <ul style="background-color: #111">
-            <!-- Single chekbox item -->
-            <li>
-              <label class="label-checkbox item-content">
-                <!-- Checked by default -->
-                <input type="checkbox" name="my-checkbox" value="Books">
-                <div class="item-media">
-                  <i class="icon icon-form-checkbox"></i>
-                </div>
-                <div class="item-inner">
-                  <div class="item-title">Программист</div>
-                </div>
-              </label>
-            </li>
-            <!-- Another chekbox item -->
-            <li>
-              <label class="label-checkbox item-content">
-                <input type="checkbox" name="my-checkbox" value="Movies">
-                <div class="item-media">
-                  <i class="icon icon-form-checkbox"></i>
-                </div>
-                <div class="item-inner">
-                  <div class="item-title">Сис-админ</div>
-                </div>
-              </label>
-            </li>
-            <li>
-              <label class="label-checkbox item-content">
-                <input type="checkbox" name="my-checkbox" value="Movies">
-                <div class="item-media">
-                  <i class="icon icon-form-checkbox"></i>
-                </div>
-                <div class="item-inner">
-                  <div class="item-title">Сантехник</div>
-                </div>
-              </label>
-            </li>
-          </ul>
-          <div class="list-block">
-            <center><h3 style="display: inline;">Пол</h3></center>
-  <ul style="background-color: #111">
-    <!-- Single radio input -->
-    <li>
-      <label class="label-radio item-content">
-        <!-- Checked by default -->
-        <input type="radio" name="my-radio" value="Books" checked="checked">
-        <div class="item-inner">
-          <div class="item-title">Женщина</div>
-        </div>
-      </label>
-    </li>
-    <!-- Another radio input -->
-    <li>
-      <label class="label-radio item-content">
-        <input type="radio" name="my-radio" value="Movies">
-        <div class="item-inner">
-          <div class="item-title">Человек</div>
-        </div>
-      </label>
-    </li>
-  </ul>
-</div>     
-        </div>          
-      </div>
-    </div>
-    <!-- Right panel with cover effect-->
-    <div class="panel panel-right panel-cover">
-      <div class="content-block">
-        <p>Right panel content goes here</p>
-      </div>
-    </div>
-    <!-- Views-->
-    <div class="views">
-      <!-- Your main view, should have "view-main" class-->
-      <div class="view view-main">
-        <!-- Top Navbar-->
-        <div class="navbar">
-          <div class="navbar-inner">
-            <!-- We have home navbar without left link-->
-            <div class="center sliding">Awesome App</div>
-            <div class="right">
-              <!-- Right link contains only icon - additional "icon-only" class--><a href="#" class="link icon-only open-panel"> <i class="icon icon-bars"></i></a>
-            </div>
-          </div>
-        </div>
+    
+    
         <!-- Pages, because we need fixed-through navbar and toolbar, it has additional appropriate classes-->
         <div class="pages navbar-through toolbar-through">
           <!-- Page, data-page contains page name-->
-          <div data-page="index" class="page">
-  <!-- Search Bar -->
-  <form data-search-list=".list-block" data-search-in=".item-title" class="searchbar searchbar-init">
-    <div class="searchbar-input">
-      <input type="search" placeholder="Search"><a href="#" class="searchbar-clear"></a>
-    </div><a href="geo.html" class="searchbar-cancel">GEO</a>
-  </form>
+  
+<!-- We don't need full layout here, because this page will be parsed with Ajax-->
+<!-- Top Navbar-->
+<div class="navbar">
+  <div class="navbar-inner">
+    <div class="center sliding">Создать визитку</div>
+  </div>
+</div>
+<div class="pages">
+  <!-- Page, data-page contains page name-->
+  <div data-page="reg" class="page">
+    <!-- Scrollable page content-->
+    <div class="page-content">
+        <div data-page="contact" class="page">
 
-  <!-- Search Bar overlay -->
-  <div class="searchbar-overlay"></div>
-           <div class="page-content contacts-content">
-  <div class="list-block contacts-block">
-    <div class="list-group">
-       <style>
-    .popover {
-      width: 200px;
-    }
-  </style>
-      <!-- About popover -->
-  <div class="popover popover-about">
-    <div class="popover-angle"></div>
-    <div class="popover-inner">
-      <div class="content-block">
-        <p>Abbie</p>
-        <p>Я пишу софт, пью виски и играю в покер на битки.</p>
-        <i class="icon f7-icons">social_instagram_fill</i>
-        <i class="icon f7-icons">social_github_fill</i>
-        <i class="icon f7-icons">social_facebook_fill</i><br>
-        <div class="chip" id="test">
+      <div class="content-block-title">Визитная карточка</div>
+      <form id="my-form" class="list-block">
+  <ul>
+    <!-- Text inputs -->
+    <li>
+      <div class="item-content">
+        <div class="item-media"><i class="icon f7-icons">person</i></div>
+        <div class="item-inner">
+          <div class="item-title label">Имя</div>
+          <div class="item-input">
+            <input type="text" name="name" placeholder="Имя Фамилия">
+          </div>
+        </div>
+      </div>
+    </li>
+    <li>
+      <div class="item-content">
+        <div class="item-media"><i class="icon f7-icons">email</i></div>
+        <div class="item-inner">
+          <div class="item-title label">E-mail</div>
+          <div class="item-input">
+            <input type="email" name="email" placeholder="E-mail">
+          </div>
+        </div>
+      </div>
+    </li>
+    <!-- Select -->
+    <li>
+      <div class="item-content">
+        <div class="item-media"><i class="icon f7-icons">persons</i></div>
+        <div class="item-inner">
+          <div class="item-title label">Пол</div>
+          <div class="item-input">
+            <select name="sex">
+              <option>Мужской</option>
+              <option>Женский</option>
+            </select>
+          </div>
+        </div>
+      </div>
+    </li>
+    <!-- Date -->
+    <li>
+      <div class="item-content">
+        <div class="item-media"><i class="icon f7-icons">calendar</i></div>
+        <div class="item-inner">
+          <div class="item-title label">Д.Р.</div>
+          <div class="item-input">
+            <input type="date" name="bd" placeholder="Birth day" value="2014-04-30">
+          </div>
+        </div>
+      </div>
+    </li>
+    <!-- Textarea -->
+    <li class="align-top">
+      <div class="item-content">
+        <div class="item-media"><i class="icon f7-icons">chat</i></div>
+        <div class="item-inner">
+          <div class="item-title label">Обо мне</div>
+          <div class="item-input">
+            <textarea name="facts" placeholder="Интересные факты о вас"></textarea>
+          </div>
+        </div>
+      </div>
+    </li>
+    <li>
+      <div class="item-content">
+        <div class="item-media"><i class="icon f7-icons">tags</i></div>
+        <div class="item-inner">
+          <div class="item-title label">Тэги</div>
+          <div class="item-input">
+            <div class="chip" id="test">
               <div class="chip-label">Программист</div>
             </div>
             <div class="chip" id="test">
+              <div class="chip-label">Сис-админ</div>
+            </div><br>
+            <div class="chip">
+              <div class="chip-label">Феминистка</div>
+            </div>
+            <div class="chip">
+              <div class="chip-label">Гарри-Поттер</div>
+            </div><br>
+            <div class="chip">
               <div class="chip-label">Сантехник</div>
             </div>
-        <p><a href="#" class="button button-fill color-green">Позвонить</a></p>
+          </div>
+        </div>
       </div>
-    </div>
+    </li>
+  </ul>
+  <p><a href="" class="button button-big button-fill color-gray form-to-data">Войти</a></p>
+    </form></div>
   </div>
-      <ul>
-        <li class="list-group-title">A</li>
-        <li>
-          <a href="reg.html" class="item-link"><div class="item-content">
-            <div class="item-inner">
-              <div class="item-title">Aaron </div>
-            </div>
-          </div>
-        </li></a>
-        <li>
-          <a href="#" data-popover=".popover-about" class="item-link open-popover" class=""><div class="item-content">
-            <div class="item-inner">
-              <div class="item-title">Abbie</div>
-            </div>
-          </div>
-        </li></a>
-        <script type="text/javascript">
-          function dropmenu(){
-            if(document.getElementById('dropmenu').style.display == "block"){
-              document.getElementById('dropmenu').style.display = "none"
-            }else{
-              document.getElementById('dropmenu').style.display = "block"
-            }
-          }
-        </script>
-        <li>
-          <a href="javascript:dropmenu()" class="item-link"><div class="item-content">
-            <div class="item-inner">
-              <div class="item-title">Adam</div>
-            </div>
-          </div>
-        </li></a>
-        <li id="dropmenu" style="display: none">
-          <div style="background-color: grey; height: 30px">
-            <center><a href="https://t.me/aplinxy9plin" target="_blank"><img src="https://seeklogo.com/images/T/telegram-minimal-logo-2F6E632BF2-seeklogo.com.png" width="30px" style="display: inline"></a><img src="https://findicons.com/files/icons/2770/ios_7_icons/100/vkontakte.png" width="30px" style="display: inline; margin-left: 40px"><img src="https://png.icons8.com/ios/540/whatsapp.png" width="30px" style="display: inline; margin-left: 40px"><img src="https://seeklogo.com/images/I/instagram-new-2016-glyph-logo-84CB825424-seeklogo.com.png" width="30px" style="display: inline; margin-left: 40px"></center>
-          </div>
-        </li>
-        <li>
-          <a href="#" class="item-link"><div class="item-content">
-            <div class="item-inner">
-              <div class="item-title">Adele</div>
-            </div>
-          </div>
-        </li></a>
-        <li>
-          <a href="#" class="item-link"><div class="item-content">
-            <div class="item-inner">
-              <div class="item-title">Agatha</div>
-            </div>
-          </div>
-        </li></a>
-        <li>
-          <a href="#" class="item-link"><div class="item-content">
-            <div class="item-inner">
-              <div class="item-title">Agnes</div>
-            </div>
-          </div>
-        </li></a>
-        <li>
-          <a href="#" class="item-link"><div class="item-content">
-            <div class="item-inner">
-              <div class="item-title">Albert</div>
-            </div>
-          </div>
-        </li></a>
-        <li>
-          <a href="#" class="item-link"><div class="item-content">
-            <div class="item-inner">
-              <div class="item-title">Alexander</div>
-            </div>
-          </div>
-        </li></a>
-      </ul>
-    </div>
-    <div class="list-group">
-      <ul>
-        <li class="list-group-title">B</li>
-        <li>
-          <a href="#" class="item-link"><div class="item-content">
-            <div class="item-inner">
-              <div class="item-title">Bailey</div>
-            </div>
-          </div>
-        </li></a>
-        <li>
-          <a href="#" class="item-link"><div class="item-content">
-            <div class="item-inner">
-              <div class="item-title">Barclay</div>
-            </div>
-          </div>
-        </li></a>
-        <li>
-          <a href="#" class="item-link"><div class="item-content">
-            <div class="item-inner">
-              <div class="item-title">Bartolo</div>
-            </div>
-          </div>
-        </li></a>
-        <li>
-          <a href="#" class="item-link"><div class="item-content">
-            <div class="item-inner">
-              <div class="item-title">Bellamy</div>
-            </div>
-          </div>
-        </li></a>
-        <li>
-          <a href="#" class="item-link"><div class="item-content">
-            <div class="item-inner">
-              <div class="item-title">Belle</div>
-            </div>
-          </div>
-        </li></a>
-        <li>
-          <a href="#" class="item-link"><div class="item-content">
-            <div class="item-inner">
-              <div class="item-title">Benjamin</div>
-            </div>
-          </div>
-        </li></a>
-      </ul>
-    </div>
-    <div class="list-group">
-      <ul>
-        <li class="list-group-title">C</li>
-        <li>
-          <a href="#" class="item-link"><div class="item-content">
-            <div class="item-inner">
-              <div class="item-title">Caiden</div>
-            </div>
-          </div>
-        </li></a>
-        <li>
-          <a href="#" class="item-link"><div class="item-content">
-            <div class="item-inner">
-              <div class="item-title">Calvin</div>
-            </div>
-          </div>
-        </li></a>
-        <li>
-          <a href="#" class="item-link"><div class="item-content">
-            <div class="item-inner">
-              <div class="item-title">Candy</div>
-            </div>
-          </div>
-        </li></a>
-        <li>
-          <a href="#" class="item-link"><div class="item-content">
-            <div class="item-inner">
-              <div class="item-title">Carl</div>
-            </div>
-          </div>
-        </li></a>
-        <li>
-          <a href="#" class="item-link"><div class="item-content">
-            <div class="item-inner">
-              <div class="item-title">Cherilyn</div>
-            </div>
-          </div>
-        </li></a>
-        <li>
-          <a href="#" class="item-link"><div class="item-content">
-            <div class="item-inner">
-              <div class="item-title">Chester</div>
-            </div>
-          </div>
-        </li></a>
-        <li>
-          <a href="#" class="item-link"><div class="item-content">
-            <div class="item-inner">
-              <div class="item-title">Chloe</div>
-            </div>
-          </div>
-        </li></a>
-      </ul>
-    </div>
-    <div class="list-group">
-      <ul>
-        <li class="list-group-title">V</li>
-        <li>
-          <a href="#" class="item-link"><div class="item-content">
-            <div class="item-inner">
-              <div class="item-title">Vladimir</div>
-            </div>
-          </div>
-        </li></a>
-      </ul>
+</div>
+
       <ul>
     </div>
   </div>

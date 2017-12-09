@@ -12,6 +12,32 @@ var mainView = myApp.addView('.view-main', {
     dynamicNavbar: true
 });
 
+myApp.onPageInit('index', function(page){
+    //alert();
+    var y = 0;
+    $$("#xuy").click(function(){
+        //alert('sdf');
+        if(y == 0){
+            y++;
+        }else{
+          document.getElementById('xuy').href = "test.html";
+        }
+        if(document.getElementById('dropmenu').style.display == "block"){
+          document.getElementById('dropmenu').style.display = "none"
+        }else{
+          document.getElementById('dropmenu').style.display = "block"
+        }
+    });   
+/* function dropmenu(){
+        if(document.getElementById('dropmenu').style.display == "block"){
+          document.getElementById('dropmenu').style.display = "none"
+        }else{
+          document.getElementById('dropmenu').style.display = "block"
+          document.getElementById('xuy').href = "test.html";
+        }
+    }*/
+});
+
 myApp.onPageInit('geo', function (page) {
     // Default
     var x = true;
